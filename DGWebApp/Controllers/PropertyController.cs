@@ -56,6 +56,7 @@ namespace DGWebApp.Controllers
         }
 
         [HttpPut("{id}")]
+        [ValidateModelState]
         public async Task<IActionResult> Put(int id, [FromBody]PutProperty property)
         {
             var result = await repository.Update(id, property);
